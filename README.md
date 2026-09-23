@@ -65,19 +65,36 @@ New text was generated one character at a time. Temperature scaling was also exp
 
 ---
 
-## Part II: Programming Tasks
+## Question 2: Sentiment Classification Using RNN
 
 ### 1. Tensor Manipulations & Reshaping
 
-A random TensorFlow tensor with shape `(4, 6)` was created, and its rank and shape were examined.
+The IMDB movie review dataset was used to build an LSTM-based sentiment classifier.
 
-The tensor was then:
+The reviews were represented as integer sequences and padded to a maximum length of 200.
 
-* Reshaped from `(4, 6)` to `(2, 3, 4)`
-* Transposed from `(2, 3, 4)` to `(3, 2, 4)`
-* Combined with a smaller tensor of shape `(1, 4)` using broadcasting
+The model used:
 
-This experiment demonstrates how TensorFlow handles tensor rank, shape, reshaping, transposing, and broadcasting operations.
+'''text
+Embedding
+    ↓
+LSTM (128 units)
+    ↓
+Dense (1, Sigmoid)
+'''
+
+The model was trained for 5 epochs using the Adam optimizer.
+
+A confusion matrix and classification report were generated to evaluate:
+
+Accuracy
+Precision
+Recall
+F1-score
+
+The model achieved approximately 83%–84% test accuracy.
+
+The precision-recall tradeoff was also discussed to explain why both metrics are important for sentiment classification.
 
 ### 2. Loss Functions
 
