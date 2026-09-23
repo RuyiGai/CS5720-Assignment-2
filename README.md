@@ -31,7 +31,7 @@ The Jupyter Notebook contains:
 
 ### `dog.jpg`
 
-The grayscale dog image used for the Sobel edge detection task in Question 4.（彩色的）
+The color dog image used for the Sobel edge detection task in Question 4.
 
 
 ## Assignment Overview
@@ -111,7 +111,7 @@ This experiment demonstrates how stride and padding affect the size and values o
 
 ### Task 1: Sobel Edge Detection
 
-A grayscale dog image was processed using Sobel filters for edge detection.
+A color dog image was converted to grayscale using cv2.IMREAD_GRAYSCALE and then processed using Sobel filters for edge detection.
 
 Both Sobel-X and Sobel-Y filters were applied, and the following images were displayed:
 
