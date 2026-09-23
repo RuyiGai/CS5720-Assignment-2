@@ -63,8 +63,6 @@ New text was generated one character at a time. Temperature scaling was also exp
 
 ## Question 2: Sentiment Classification Using RNN
 
-### 1. Tensor Manipulations & Reshaping
-
 The IMDB movie review dataset was used to build an LSTM-based sentiment classifier.
 
 The reviews were represented as integer sequences and padded to a maximum length of 200.
