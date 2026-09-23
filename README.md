@@ -20,7 +20,7 @@ dog.jpg
 
 ### `Home Assignment 2.docx`
 
-This document contains:S creenshots of the results 代码和结果截图
+This document contains: Code and results screenshots
 
 ### `Assignment 2.ipynb`
 
@@ -128,7 +128,7 @@ A random 4×4 matrix was created and processed using:
 
 The original matrix and both pooled matrices were printed.
 
-This experiment demonstrates how pooling operations reduce the spatial dimensions of feature maps.
+This experiment demonstrates the effects of different pooling operations on feature maps.
 
 
 ## Question 5: CNN Architectures
