@@ -75,13 +75,13 @@ The reviews were represented as integer sequences and padded to a maximum length
 
 The model used:
 
-'''text
+```text
 Embedding
     ↓
 LSTM (128 units)
     ↓
 Dense (1, Sigmoid)
-'''
+```
 
 The model was trained for 5 epochs using the Adam optimizer.
 
@@ -96,115 +96,100 @@ The model achieved approximately 83%–84% test accuracy.
 
 The precision-recall tradeoff was also discussed to explain why both metrics are important for sentiment classification.
 
-### 2. Loss Functions
+---
 
-Mean Squared Error (MSE) and Categorical Cross-Entropy (CCE) were implemented and compared using different predictions.
+## Question 3: Convolution Operations with Different Parameters
 
-The true label was:
+A 5×5 input matrix and a 3×3 kernel were used to demonstrate convolution operations with different stride and padding settings.
 
-```text
-[1, 0, 0]
-```
+The following four cases were implemented:
 
-Two predictions were tested:
+* Stride = 1, Padding = VALID
+* Stride = 1, Padding = SAME
+* Stride = 2, Padding = VALID
+* Stride = 2, Padding = SAME
 
-```text
-Original:  [0.7, 0.2, 0.1]
-Modified:  [0.8, 0.1, 0.1]
-```
+The output feature maps for each case were printed using TensorFlow.
 
-When the prediction became closer to the true label, both loss values decreased:
+This experiment demonstrates how stride and padding affect the size and values of convolution outputs.
 
-* **MSE:** approximately `0.0467 → 0.0200`
-* **Categorical Cross-Entropy:** approximately `0.3567 → 0.2231`
+---
 
-A bar chart was also created using Matplotlib to compare the loss values.
+## Question 4: CNN Feature Extraction with Filters and Pooling
 
-This experiment demonstrates that a lower loss generally indicates that the model prediction is closer to the target values.
+### Task 1: Sobel Edge Detection
 
-### 3. Train a Model with Different Optimizers
+A grayscale dog image was processed using Sobel filters for edge detection.
 
-The MNIST handwritten digit dataset was used to compare two optimization algorithms:
+Both Sobel-X and Sobel-Y filters were applied, and the following images were displayed:
 
-* **Adam**
-* **SGD**
+* Original Image
+* Sobel-X Edge Detection
+* Sobel-Y Edge Detection
 
-Both models used the same neural network architecture:
+### Task 2: Max Pooling and Average Pooling
 
-```text
-Flatten (28 × 28)
-        ↓
-Dense (128, ReLU)
-        ↓
-Dense (10, Softmax)
-```
+A random 4×4 matrix was created and processed using:
 
-The models were trained using the same:
+* 2×2 Max Pooling
+* 2×2 Average Pooling
 
-* MNIST dataset
-* Network architecture
-* Learning rate
-* Batch size
-* Number of epochs
-* Validation split
+The original matrix and both pooled matrices were printed.
 
-The main difference was the optimizer.
+This experiment demonstrates how pooling operations reduce the spatial dimensions of feature maps.
 
-Training and validation accuracy were plotted to compare the learning behavior of Adam and SGD.
+---
 
-The experiment showed that **Adam generally reached high accuracy faster**, while **SGD improved more gradually**.
+## Question 5: CNN Architectures
 
-### 4. Train a Neural Network and Log to TensorBoard
+### Task 1: AlexNet
 
-A neural network was trained on the MNIST dataset using the Adam optimizer, and TensorBoard was used to record and visualize the training process.
+A simplified AlexNet architecture was implemented using TensorFlow/Keras.
 
-The model used the following architecture:
+The model includes:
 
 ```text
-Input (28 × 28)
-      ↓
+Conv2D
+MaxPooling
+Conv2D
+MaxPooling
+Conv2D
+Conv2D
+Conv2D
+MaxPooling
 Flatten
-      ↓
-Dense (128, ReLU)
-      ↓
+Dense
+Dropout
+Dense
+Dropout
 Dense (10, Softmax)
 ```
 
-TensorBoard was used to monitor:
+The model summary was printed after defining the architecture.
 
-* Training accuracy
-* Validation accuracy
-* Training loss
-* Validation loss
+### Task 2: ResNet-like Model
 
-The TensorBoard log files are stored in the `logs/fit/` directory.
+A Residual Block was implemented using two Conv2D layers and a skip connection.
 
-#### 4.1 Five-Epoch Experiment
+Two residual blocks were then used to build a simple ResNet-like model:
 
-The first experiment trained the model for **5 epochs**.
+```text
+Input
+   ↓
+Conv2D
+   ↓
+Residual Block
+   ↓
+Residual Block
+   ↓
+Flatten
+   ↓
+Dense (128)
+   ↓
+Dense (10, Softmax)
+```
 
-The training accuracy increased from approximately **89.42%** in the first epoch to **97.67%** in the fifth epoch.
-
-The validation accuracy increased from approximately **95.53%** to **97.75%**.
-
-Both training and validation accuracy improved, while the training and validation loss decreased. There was **no clear evidence of overfitting after five epochs**.
-
-#### 4.2 Ten-Epoch Experiment
-
-A second experiment was performed by increasing the number of epochs from **5 to 10**.
-
-In this experiment:
-
-* **Training Accuracy:** `89.70% → 99.10%`
-* **Training Loss:** `0.3753 → 0.0331`
-* **Validation Accuracy:** reached `97.78%`
-* **Validation Loss:** `0.1731 → 0.0742`
-
-The validation loss reached its lowest value of approximately **0.0732 at epoch 9** and then increased slightly to **0.0742 at epoch 10**.
-
-At the same time, training accuracy continued to improve. This slight divergence between training and validation performance may indicate the **beginning of overfitting**.
-
-Overall, increasing the number of epochs improved the model's training and validation performance in this experiment. However, training for too many epochs may eventually cause overfitting.
+The model summary was printed to show the complete architecture.
 
 ---
 
@@ -212,20 +197,22 @@ Overall, increasing the number of epochs improved the model's training and valid
 
 * **Python**
 * **TensorFlow / Keras**
+* **NumPy**
+* **OpenCV**
 * **Matplotlib**
+* **Seaborn**
+* **Scikit-learn**
 * **Jupyter Notebook**
-* **TensorBoard**
-* **MNIST Dataset**
 
 ---
 
 ## Conclusion
 
-This assignment provided both theoretical and practical experience with neural networks and TensorFlow.
+This assignment provided practical experience with both RNNs and CNNs.
 
-The short-answer section covered fundamental concepts such as neural network architecture, weights and biases, activation functions, perceptrons, the vanishing-gradient problem, and the neural network training cycle.
+The RNN tasks demonstrated LSTM-based text generation and sentiment classification, including temperature scaling, confusion matrices, and precision-recall evaluation.
 
-The programming section provided hands-on experience with tensor operations, broadcasting, loss functions, optimizer comparison, MNIST classification, and TensorBoard visualization.
+The CNN tasks demonstrated convolution with different strides and padding, Sobel edge detection, pooling operations, and the implementation of simplified AlexNet and ResNet-like architectures.
 
-The experiments also demonstrated the impact of optimizer selection and training duration on neural network performance. In particular, increasing the number of epochs improved the model's training accuracy, while the slight increase in validation loss after epoch 9 suggests that continued training could eventually lead to overfitting.
+Overall, the assignment provided hands-on experience with fundamental deep learning models and their practical applications.
 
