@@ -34,7 +34,6 @@ The Jupyter Notebook contains:
 
 The grayscale dog image used for the Sobel edge detection task in Question 4.（彩色的）
 
----
 
 ## Assignment Overview
 
@@ -42,7 +41,6 @@ This assignment focuses on practical implementation of Recurrent Neural Networks
 
 The assignment covers LSTM-based text generation, sentiment classification, convolution operations, edge detection, pooling operations, and CNN architectures including AlexNet and a ResNet-like model.
 
----
 
 ## Question 1: RNN for Text Generation
 
@@ -63,7 +61,6 @@ The model was trained for 10 epochs using the Adam optimizer.
 
 New text was generated one character at a time. Temperature scaling was also explained to demonstrate how temperature affects the randomness and diversity of generated text.
 
----
 
 ## Question 2: Sentiment Classification Using RNN
 
@@ -96,7 +93,6 @@ The model achieved approximately 83%–84% test accuracy.
 
 The precision-recall tradeoff was also discussed to explain why both metrics are important for sentiment classification.
 
----
 
 ## Question 3: Convolution Operations with Different Parameters
 
@@ -113,7 +109,6 @@ The output feature maps for each case were printed using TensorFlow.
 
 This experiment demonstrates how stride and padding affect the size and values of convolution outputs.
 
----
 
 ## Question 4: CNN Feature Extraction with Filters and Pooling
 
@@ -138,7 +133,6 @@ The original matrix and both pooled matrices were printed.
 
 This experiment demonstrates how pooling operations reduce the spatial dimensions of feature maps.
 
----
 
 ## Question 5: CNN Architectures
 
