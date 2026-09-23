@@ -51,11 +51,17 @@ An LSTM-based RNN was implemented to generate text character by character.
 The Shakespeare Sonnets dataset was loaded and converted into integer character IDs. Training sequences were created using 100-character input sequences and the next character as the target.
 
 The model used:
+
+```text
 Embedding
     ↓
 LSTM (1024 units)
     ↓
 Dense (Character Prediction)
+```
+The model was trained for 10 epochs using the Adam optimizer.
+
+New text was generated one character at a time. Temperature scaling was also explained to demonstrate how temperature affects the randomness and diversity of generated text.
 
 ---
 
