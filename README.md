@@ -43,7 +43,6 @@ The assignment covers LSTM-based text generation, sentiment classification, conv
 
 
 ## Question 1: RNN for Text Generation
-
 An LSTM-based RNN was implemented to generate text character by character.
 
 The Shakespeare Sonnets dataset was loaded and converted into integer character IDs. Training sequences were created using 100-character input sequences and the next character as the target.
