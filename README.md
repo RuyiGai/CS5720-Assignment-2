@@ -20,7 +20,7 @@ dog.jpg
 
 ### `Home Assignment 2.docx`
 
-This document contains: Code and results screenshots
+This document contains: code and results screenshots
 
 ### `Assignment 2.ipynb`
 
