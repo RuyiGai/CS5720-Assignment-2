@@ -87,10 +87,10 @@ The model was trained for 5 epochs using the Adam optimizer.
 
 A confusion matrix and classification report were generated to evaluate:
 
-Accuracy
-Precision
-Recall
-F1-score
+* Accuracy
+* Precision
+* Recall
+* F1-score
 
 The model achieved approximately 83%–84% test accuracy.
 
